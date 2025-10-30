@@ -48,6 +48,44 @@ The application relies on several supporting services for its functionality:
 -   **Tag Service**: Manages fetching existing tags and saving new tags.
 -   **File Service**: Provides functionalities for document upload, search, preview, and download.
 
+## 🚀 Getting Started
+
+Follow these instructions to set up, install, and run the project locally.
+
+### Prerequisites
+
+Ensure you have the following installed:
+- Node.js (LTS version recommended)
+- npm (comes with Node.js)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/krishnaagarwal781/all_soft_assignment.git
+    cd all_soft_assignment
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+### Running the Development Server
+
+To run the project in development mode:
+```bash
+npm run dev
+```
+This will start the Vite development server, and you can view the application in your browser, usually at `http://localhost:5173`.
+
+### Building for Production
+
+To build the project for production:
+```bash
+npm run build
+```
+This command compiles the application into static files in the `dist/` directory, which can then be deployed to a web server.
+
 ## 📁 Folder Structure
 
 The project follows a standard React application structure, organized for maintainability and scalability:
