@@ -22,6 +22,33 @@ export const validateOTP = async (mobileNumber, otp) => {
   });
   return response.json();
 };
-export const searchDocuments = async () => {};
-
-export const getDocumentTags = async () => {};
+export const searchDocuments = async (searchPayload, token) => {
+  const response = await fetch(`${BASE_URL}/searchDocumentEntry`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+    body: JSON.stringify(searchPayload),
+  });
+  const data = await response.json();
+  return {
+    ok: response.ok,
+    status: data.status,
+    data: data.data,
+    message: data.message,
+    recordsFiltered: data.recordsFiltered,
+  };
+};
+export const getDocumentTags = async (term, token) => {
+  const response = await fetch(`${BASE_URL}/documentTags`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+    body: JSON.stringify({ term: term }),
+  });
+  const data = await response.json();
+  return { ok: response.ok, data: data };
+};
