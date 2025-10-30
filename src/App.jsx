@@ -8,7 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import StaticAdminRegistration from "./components/Auth/StaticAdminRegistration";
 import Layout from "./components/Layout";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const AuthContext = React.createContext();
 

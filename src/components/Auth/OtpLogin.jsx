@@ -37,12 +37,19 @@ const OtpLogin = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const data = await validateOTP(mobile, otp);
-      if (data.ok && data.data && data.data.token && data.data.user_id) {
-        login(data.data.token, data.data.user_id);
+      const responseData = await validateOTP(mobile, otp);
+      if (
+        responseData.ok &&
+        responseData.data &&
+        responseData.data.status &&
+        responseData.data.data &&
+        responseData.data.data.token &&
+        responseData.data.data.user_id
+      ) {
+        login(responseData.data.data.token, responseData.data.data.user_id);
         navigate("/dashboard");
       } else {
-        setMessage(data.message || "Invalid OTP. Please try again.");
+        setMessage(responseData.data.message || "Invalid OTP. Please try again.");
       }
     } catch (error) {
       console.error("Error validating OTP:", error);

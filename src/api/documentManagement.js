@@ -20,7 +20,8 @@ export const validateOTP = async (mobileNumber, otp) => {
     },
     body: JSON.stringify({ mobile_number: mobileNumber, otp: otp }),
   });
-  return response.json();
+  const data = await response.json();
+  return { ok: response.ok, data: data };
 };
 export const searchDocuments = async (searchPayload, token) => {
   const response = await fetch(`${BASE_URL}/searchDocumentEntry`, {

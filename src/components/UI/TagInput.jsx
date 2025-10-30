@@ -1,4 +1,4 @@
-import { X, Loader2 } from "lucide-react";
+import { Tag, X, Loader2 } from "lucide-react";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../App";
 import { getDocumentTags } from "../../api/documentManagement";
@@ -79,6 +79,10 @@ const TagInput = ({ selectedTags, setSelectedTags }) => {
 
   return (
     <div className="relative">
+      <h3 className="text-sm font-semibold mb-4 flex items-center">
+        <Tag className="w-4 h-4 mr-2 text-indigo-700" />
+        Tags
+      </h3>
       <div
         className={`flex flex-wrap items-center gap-2 p-2 border rounded-lg shadow-inner transition duration-150 ease-in-out
           ${
