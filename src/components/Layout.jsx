@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { LogOut, Home, Users } from "lucide-react";
+import { AuthContext } from "../App";
+import { useContext } from "react";
 
 const Layout = ({ children }) => {
+  const { logout } = useContext(AuthContext);
   const NavItem = ({ to, icon: Icon, label }) => (
     <Link
       to={to}
@@ -25,7 +28,10 @@ const Layout = ({ children }) => {
           />
         </nav>
         <div className="pt-4 border-t border-gray-400">
-          <button className="flex items-center w-full p-3 text-sm font-medium text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+          <button
+            onClick={logout}
+            className="flex items-center w-full p-3 text-sm font-medium text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+          >
             <LogOut className="w-5 h-5 mr-3" />
             Logout
           </button>
