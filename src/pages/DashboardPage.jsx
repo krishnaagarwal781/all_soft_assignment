@@ -44,11 +44,11 @@ const DashboardPage = () => {
       {view === "upload" && <FileUploadForm />}
 
       {view === "search" && (
-        <>
+        <div>
           <DocumentSearch onSearch={handleSearchResults} />
 
           <SearchResultsTable results={searchResults} />
-        </>
+        </div>
       )}
     </div>
   );

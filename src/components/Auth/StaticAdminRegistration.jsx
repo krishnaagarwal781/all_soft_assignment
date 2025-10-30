@@ -19,7 +19,7 @@ const StaticAdminRegistration = () => {
   };
 
   return (
-    <div className="w-full max-w-md p-6 bg-white rounded-xl shadow-lg">
+    <div className="w-full max-w-md p-6 bg-white rounded-md border border-gray-300">
       <h2 className="text-2xl font-bold mb-6 text-center text-indigo-600">
         Admin User Registration
       </h2>

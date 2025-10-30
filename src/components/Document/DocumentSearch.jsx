@@ -87,7 +87,7 @@ const DocumentSearch = ({ onSearch }) => {
   };
 
   return (
-    <div className="p-6 bg-white rounded-xl mb-8 border border-gray-300">
+    <div className="p-6 bg-white rounded-md mb-8 border border-gray-300">
       <h3 className="text-xl font-bold mb-3 text-indigo-800 flex items-center">
         <Search className="w-5 h-5 mr-2" />
         Advanced Document Search
@@ -97,7 +97,7 @@ const DocumentSearch = ({ onSearch }) => {
 
       {message && (
         <div
-          className={`mb-6 p-4 rounded-lg text-sm font-medium ${
+          className={`mb-6 p-4 rounded-md text-sm font-medium ${
             message.includes("Failed") ||
             message.includes("error") ||
             message.includes("Authentication")

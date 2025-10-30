@@ -115,7 +115,7 @@ const FileUploadForm = () => {
   };
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-lg">
+    <div className="p-6 bg-white rounded-md border border-gray-300">
       <h3 className="text-xl font-semibold mb-4 text-indigo-700 flex items-center">
         <Upload className="w-6 h-6 mr-2" />
         Upload New Document
