@@ -79,12 +79,12 @@ const TagInput = ({ selectedTags, setSelectedTags }) => {
 
   return (
     <div className="relative">
-      <h3 className="text-sm font-semibold mb-4 flex items-center">
+      <h3 className="text-sm font-semibold mb-2 flex items-center">
         <Tag className="w-4 h-4 mr-2 text-indigo-700" />
         Tags
       </h3>
       <div
-        className={`flex flex-wrap items-center gap-2 p-2 border rounded-lg shadow-inner transition duration-150 ease-in-out
+        className={`flex flex-wrap items-center gap-2 p-2 border rounded-lg transition duration-150 ease-in-out
           ${
             showSuggestions
               ? "border-emerald-500 ring-1 ring-emerald-500"
@@ -127,7 +127,7 @@ const TagInput = ({ selectedTags, setSelectedTags }) => {
 
       {showSuggestions &&
         (filteredSuggestions.length > 0 || loadingSuggestions) && (
-          <ul className="absolute z-20 w-full bg-white border border-gray-300 rounded-lg shadow-xl mt-1 max-h-60 overflow-y-auto">
+          <ul className="absolute z-20 w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-60 overflow-y-auto">
             {filteredSuggestions.length > 0
               ? filteredSuggestions.map((tag) => (
                   <li

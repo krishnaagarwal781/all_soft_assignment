@@ -123,7 +123,7 @@ const DocumentSearch = ({ onSearch }) => {
               setMajorHead(e.target.value);
               setMinorHead("");
             }}
-            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 bg-white shadow-sm"
+            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 bg-white"
           >
             <option value="">All Categories</option>
             <option value="Personal">Personal</option>
@@ -139,7 +139,7 @@ const DocumentSearch = ({ onSearch }) => {
             value={minorHead}
             onChange={(e) => setMinorHead(e.target.value)}
             disabled={!majorHead}
-            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 bg-white shadow-sm disabled:bg-gray-50 disabled:text-gray-400 cursor-pointer disabled:cursor-not-allowed"
+            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 bg-white disabled:bg-gray-50 disabled:text-gray-400 cursor-pointer disabled:cursor-not-allowed"
           >
             <option value="">All Sub-Categories</option>
             {minorHeadOptions.map((option) => (
@@ -158,7 +158,7 @@ const DocumentSearch = ({ onSearch }) => {
             type="date"
             value={fromDate}
             onChange={(e) => setFromDate(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 shadow-sm"
+            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150"
           />
         </div>
 
@@ -170,7 +170,7 @@ const DocumentSearch = ({ onSearch }) => {
             type="date"
             value={toDate}
             onChange={(e) => setToDate(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150 shadow-sm"
+            className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 transition duration-150"
           />
         </div>
 
@@ -184,7 +184,7 @@ const DocumentSearch = ({ onSearch }) => {
         <div className="col-span-full lg:col-span-1 flex items-end space-x-3 mt-4 lg:mt-0">
           <button
             type="submit"
-            className="flex-1 flex justify-center items-center py-2.5 px-4 border border-transparent rounded-lg shadow-md text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-indigo-500/50 transition duration-150 ease-in-out"
+            className="flex-1 flex justify-center items-center py-2.5 px-4 border border-transparent rounded-lg text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-indigo-500/50 transition duration-150 ease-in-out"
             disabled={loading}
           >
             {loading ? (
@@ -216,7 +216,7 @@ const DocumentSearch = ({ onSearch }) => {
           <button
             type="button"
             onClick={handleClear}
-            className="flex-1 flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+            className="flex-1 flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
           >
             <XCircle className="w-5 h-5 mr-2 text-red-500" />
             Clear
