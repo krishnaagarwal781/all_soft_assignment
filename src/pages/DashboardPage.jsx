@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { LayoutDashboard } from "lucide-react";
 import FileUploadForm from "../components/Document/FileUploadForm";
+import DocumentSearch from "../components/Document/DocumentSearch";
+import SearchResultsTable from "../components/Document/SearchResultsTable";
 
 const DashboardPage = () => {
+  const [searchResults, setSearchResults] = useState([]);
   const [view, setView] = useState("search");
 
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+  };
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-extrabold text-gray-900 flex items-center">
@@ -36,6 +42,14 @@ const DashboardPage = () => {
       </div>
 
       {view === "upload" && <FileUploadForm />}
+
+      {view === "search" && (
+        <>
+          <DocumentSearch onSearch={handleSearchResults} />
+
+          <SearchResultsTable results={searchResults} />
+        </>
+      )}
     </div>
   );
 };
