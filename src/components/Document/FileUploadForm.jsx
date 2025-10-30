@@ -9,11 +9,7 @@ import {
 } from "lucide-react";
 import TagInput from "../UI/TagInput";
 import { AuthContext } from "../../App";
-
-const MOCK_MINOR_HEADS = {
-  Personal: ["John Doe", "Tom Smith", "Emily White", "Sarah Johnson"],
-  Professional: ["Accounts", "HR", "IT", "Finance", "Marketing", "Sales"],
-};
+import { MOCK_MINOR_HEADS } from "../../constants/documentConstants";
 
 const FileUploadForm = () => {
   const { authToken, userId } = useContext(AuthContext);

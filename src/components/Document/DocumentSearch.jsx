@@ -3,11 +3,7 @@ import { Search, Calendar, Folder, XCircle } from "lucide-react";
 import TagInput from "../UI/TagInput";
 import { AuthContext } from "../../App";
 import { searchDocuments } from "../../api/documentManagement";
-
-const MOCK_MINOR_HEADS = {
-  Personal: ["John Doe", "Tom Smith", "Emily White", "Sarah Johnson"],
-  Professional: ["Accounts", "HR", "IT", "Finance", "Marketing", "Sales"],
-};
+import { MOCK_MINOR_HEADS } from "../../constants/documentConstants";
 
 const DocumentSearch = ({ onSearch }) => {
   const { authToken, userId } = useContext(AuthContext);
