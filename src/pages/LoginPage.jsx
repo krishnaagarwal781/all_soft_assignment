@@ -1,5 +1,6 @@
 import { useState } from "react";
-import StaticAdminRegistration from "../components/Auth/StaticAdminRegistration"; // Import the component
+import OtpLogin from "../components/Auth/OtpLogin";
+import StaticAdminRegistration from "../components/Auth/StaticAdminRegistration";
 
 const LoginPage = () => {
   const [showAdminRegistration, setShowAdminRegistration] = useState(false);
@@ -29,11 +30,7 @@ const LoginPage = () => {
             Admin Registration
           </button>
         </div>
-        {showAdminRegistration ? (
-          <StaticAdminRegistration />
-        ) : (
-          <div>loin page</div>
-        )}
+        {showAdminRegistration ? <StaticAdminRegistration /> : <OtpLogin />}
       </div>
     </div>
   );
