@@ -1,16 +1,88 @@
-# React + Vite
+# Document Management System (DMS) Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a frontend application for a Document Management System, built with React. It provides functionalities for user authentication, document upload, advanced document search, and file preview/download.
 
-Currently, two official plugins are available:
+## 🏗️ Pages / Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is structured around several key pages and components:
 
-## React Compiler
+### Login Page
+-   **Mobile number input**: Allows users to enter their mobile number for authentication.
+-   **Send OTP & Validate OTP**: Handles the OTP generation and validation process.
+-   **Store auth token in localStorage**: Securely stores the authentication token upon successful login.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Admin Page
+-   **Simple form to create new users (username + password)**: Provides an interface for administrators to add new user accounts.
 
-## Expanding the ESLint configuration
+### File Upload Page
+-   **Date picker**: For selecting the document's upload date.
+-   **Dropdown → Category (Personal / Professional)**: Allows classification of documents into major categories.
+-   **Dynamic dropdown → Names / Departments**: A sub-category dropdown that dynamically updates based on the selected major category.
+-   **Tag input with chips (fetch + add new tags)**: Enables users to add relevant tags to documents, with support for fetching existing tags and adding new ones.
+-   **Remarks input field**: For adding any relevant notes or descriptions to the document.
+-   **File upload (only PDF / Images allowed)**: Supports uploading only PDF and image files.
+-   **Upload button**: Initiates the document upload process.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### File Search Page
+-   **Dropdowns for category + minor head**: Filters documents by major and minor categories.
+-   **Tag input**: Allows searching by specific tags.
+-   **From Date – To Date filters**: Filters documents by a date range.
+-   **Search button**: Executes the document search.
+-   **Display search results in a table/list**: Presents the search results in a clear, organized format.
+
+### File Preview / Download
+-   **Preview section (show PDF/Image or “Unsupported format” message)**: Displays a preview of PDF or image files, or an appropriate message for unsupported formats.
+-   **Button for individual file download**: Allows downloading a single selected file.
+-   **Button for “Download All as ZIP”**: Enables downloading all search results as a ZIP archive.
+
+### Navbar / Sidebar (optional shared layout)
+-   **Links to Upload, Search, Admin**: Provides navigation to different sections of the application.
+-   **Logout button**: Allows users to log out of their session.
+
+## ⚙️ Supporting Features / Services
+
+The application relies on several supporting services for its functionality:
+
+-   **Auth Service**: Handles user login, OTP validation, and authentication token management.
+-   **API Service**: A centralized instance for making API calls (e.g., using Axios or Fetch) with authentication tokens in headers.
+-   **Tag Service**: Manages fetching existing tags and saving new tags.
+-   **File Service**: Provides functionalities for document upload, search, preview, and download.
+
+## 📁 Folder Structure
+
+The project follows a standard React application structure, organized for maintainability and scalability:
+
+```
+.
+├── public/
+├── src/
+│   ├── api/
+│   │   └── documentManagement.js  // API calls related to document operations
+│   ├── assets/
+│   ├── Auth/
+│   │   ├── OtpLogin.jsx           // OTP login component
+│   │   └── StaticAdminRegistration.jsx // Admin user registration
+│   ├── components/
+│   │   ├── Document/
+│   │   │   ├── DocumentSearch.jsx     // Document search component
+│   │   │   ├── FileUploadForm.jsx     // File upload form component
+│   │   │   └── SearchResultsTable.jsx // Displays search results
+│   │   ├── Layout.jsx             // Shared layout component (e.g., Navbar/Sidebar)
+│   │   └── UI/
+│   │       └── TagInput.jsx         // Reusable Tag input component
+│   ├── constants/
+│   │   └── documentConstants.js   // Constants related to documents (e.g., MOCK_MINOR_HEADS)
+│   ├── pages/
+│   │   ├── DashboardPage.jsx      // Main dashboard page
+│   │   ├── LoginPage.jsx          // Login page
+│   │   └── ...                    // Other pages
+│   ├── App.jsx                    // Main application component
+│   ├── index.css                  // Global styles
+│   └── main.jsx                   // Entry point of the React application
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md                      // Project README file
+└── vite.config.js
